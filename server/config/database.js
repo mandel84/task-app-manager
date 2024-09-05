@@ -17,8 +17,8 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
   logging: false,
 });
 
-// sequelize.authenticate()
-//   .then(() => console.log('Database connected...'))
-//   .catch(err => console.error('Database connection error:', err.stack));
+sequelize.authenticate()
+  .then(() => console.log('Database connected...'))
+  .catch(err => console.error('Database connection error:', err.stack));
 
 module.exports = sequelize;

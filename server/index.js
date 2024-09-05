@@ -23,15 +23,15 @@ app.use(express.json());
 app.use('/api/tasks', taskRoutes);
 app.use('/api/projects', projectRoutes);
 
-sequelize.sync({ force: false })
-  .then(() => {
-    console.log('Database synced');
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
-    });
-  })
-  .catch(error => {
-    console.error('Unable to sync database:', error.stack);
-  });
+// sequelize.sync({ force: false })
+//   .then(() => {
+//     console.log('Database synced');
+//     app.listen(PORT, () => {
+//       console.log(`Server is running on port ${PORT}`);
+//     });
+//   })
+//   .catch(error => {
+//     console.error('Unable to sync database:', error.stack);
+//   });
 
 module.exports = app;
