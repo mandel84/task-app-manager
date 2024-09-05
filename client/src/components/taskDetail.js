@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 const TaskDetail = () => {
   const { id } = useParams();
@@ -9,7 +9,8 @@ const TaskDetail = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get(`https://tasks-app-server-two.vercel.app/api/tasks/${id}`)
+    axios
+      .get(`https://jorge-mhex.onrender.com/api/tasks/${id}`)
       .then((response) => {
         setTask(response.data);
         setLoading(false);

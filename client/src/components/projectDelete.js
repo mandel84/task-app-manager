@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useNavigate, useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { useNavigate, useParams } from "react-router-dom";
 
 const ProjectDelete = () => {
   const { id } = useParams();
@@ -8,36 +8,42 @@ const ProjectDelete = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`https://tasks-app-server-two.vercel.app/${id}`)
-      .then(response => setProject(response.data))
-      .catch(error => console.error('Error fetching project:', error));
+    axios
+      .get(`https://jorge-mhex.onrender.com/${id}`)
+      .then((response) => setProject(response.data))
+      .catch((error) => console.error("Error fetching project:", error));
   }, [id]);
 
   const handleDelete = () => {
-    axios.delete(`https://tasks-app-server-two.vercel.app/${id}`)
+    axios
+      .delete(`https://jorge-mhex.onrender.com/${id}`)
       .then(() => {
-        navigate('/projects'); 
+        navigate("/projects");
       })
-      .catch(error => console.error('Error deleting project:', error));
+      .catch((error) => console.error("Error deleting project:", error));
   };
 
   const handleCancel = () => {
-    navigate('/projects');
+    navigate("/projects");
   };
 
   if (!project) return <p>Loading...</p>;
 
   return (
-    <div className="container">
+    <div className='container'>
       <h2>Delete Project</h2>
       <p>Are you sure you want to delete the following project?</p>
       <h3>{project.name}</h3>
       <p>{project.description}</p>
       <div>
-        <button onClick={handleDelete} className="btn btn-delete" style={{ marginRight: '10px' }}>
+        <button
+          onClick={handleDelete}
+          className='btn btn-delete'
+          style={{ marginRight: "10px" }}
+        >
           Delete
         </button>
-        <button onClick={handleCancel} className="btn btn-cancel">
+        <button onClick={handleCancel} className='btn btn-cancel'>
           Cancel
         </button>
       </div>
