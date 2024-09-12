@@ -9,14 +9,16 @@ const ProjectDelete = () => {
 
   useEffect(() => {
     axios
-      .get(`https://jorge-mhex.onrender.com/${id}`)
+      // .get(`https://jorge-mhex.onrender.com/${id}`)
+      .get(`https://task-app-manager-kosr.onrender.com/${id}`)
       .then((response) => setProject(response.data))
       .catch((error) => console.error("Error fetching project:", error));
   }, [id]);
 
   const handleDelete = () => {
     axios
-      .delete(`https://jorge-mhex.onrender.com/${id}`)
+      // .delete(`https://jorge-mhex.onrender.com/${id}`)
+      .delete(`https://task-app-manager-kosr.onrender.com/${id}`)
       .then(() => {
         navigate("/projects");
       })

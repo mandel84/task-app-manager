@@ -15,7 +15,8 @@ const UpdateTaskForm = () => {
 
   useEffect(() => {
     axios
-      .get(`https://jorge-mhex.onrender.com/api/tasks/${id}`)
+      // .get(`https://jorge-mhex.onrender.com/api/tasks/${id}`)
+      .get(`https://task-app-manager-kosr.onrender.com/api/tasks/${id}`)
       .then((response) => setTask(response.data))
       .catch((error) => console.error("Error fetching task:", error))
   }, [id]);
@@ -31,7 +32,8 @@ const UpdateTaskForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(`https://jorge-mhex.onrender.com/api/tasks/${id}`, task)
+      // .put(`https://jorge-mhex.onrender.com/api/tasks/${id}`, task)
+      .put(`https://task-app-manager-kosr.onrender.com/api/tasks/${id}`, task)
       .then(() => {
         navigate("/");
       })

@@ -30,7 +30,8 @@ const TaskForm = () => {
 
     console.log("Submitting task:", newTask);
     axios
-      .post("https://jorge-mhex.onrender.com/api/tasks", newTask)
+      // .post("https://jorge-mhex.onrender.com/api/tasks", newTask)
+      .post("https://task-app-manager-kosr.onrender.com/api/tasks", newTask)
       .then(() => {
         navigate("/");
       })

@@ -10,7 +10,8 @@ const TaskDetail = () => {
 
   useEffect(() => {
     axios
-      .get(`https://jorge-mhex.onrender.com/api/tasks/${id}`)
+      // .get(`https://jorge-mhex.onrender.com/api/tasks/${id}`)
+      .get(`https://task-app-manager-kosr.onrender.com/api/tasks/${id}`)
       .then((response) => {
         setTask(response.data);
         setLoading(false);

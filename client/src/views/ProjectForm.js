@@ -12,7 +12,8 @@ const ProjectForm = () => {
     const newProject = { name, description };
 
     axios
-      .post("https://jorge-mhex.onrender.com/api/tasks", newProject)
+      // .post("https://jorge-mhex.onrender.com/api/tasks", newProject)
+      .post("https://task-app-manager-kosr.onrender.com/api/tasks", newProject)
       .then(() => {
         navigate("/projects");
       })

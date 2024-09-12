@@ -10,7 +10,8 @@ const ProjectDetail = () => {
 
   useEffect(() => {
     axios
-      .get(`https://jorge-mhex.onrender.com/${id}`)
+      // .get(`https://jorge-mhex.onrender.com/${id}`)
+      .get(`https://task-app-manager-kosr.onrender.com/${id}`)
       .then((response) => {
         setProject(response.data);
         setLoading(false);

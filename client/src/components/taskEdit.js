@@ -31,7 +31,8 @@ const TaskEdit = () => {
     const updatedTask = { title, description, dueDate, priority, projectId };
 
     axios
-      .put(`https://jorge-mhex.onrender.com/api/tasks/${id}`, updatedTask)
+      // .put(`https://jorge-mhex.onrender.com/api/tasks/${id}`, updatedTask)
+      .put(`https://task-app-manager-kosr.onrender.com/api/tasks/${id}`, updatedTask)
       .then(() => {
         navigate("/");
       })
