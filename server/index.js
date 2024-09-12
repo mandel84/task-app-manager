@@ -13,7 +13,7 @@ const app = express();
 
 
 app.use(cors({
-  origin: '*',
+  origin: ['https://jorge-1.onrender.com'],
 }))
 // app.use(cors({
 //   origin: frontendURL,
